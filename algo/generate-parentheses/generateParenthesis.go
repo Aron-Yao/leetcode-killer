@@ -9,7 +9,6 @@ func add(result *[]string, str string, m, n int) {
             add(result, str + "(", m - 1, n + 1)
         }
     }
-    
 }
 
 func generateParenthesis(n int) []string {
