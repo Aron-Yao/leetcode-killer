@@ -16,10 +16,15 @@ bool eat(char** s, TOKEN_KIND kind) {
             while (*p == ' ') {
                 ++p;
             }
+            if (p == *s) {
+                return false;
+            }
             break;
         case TOKEN_SIGN:
             if (*p == '+' || *p == '-') {
                 ++p;
+            } else {
+                return false;
             }
             break;            
         case TOKEN_NUM:
