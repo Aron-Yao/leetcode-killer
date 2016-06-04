@@ -1,7 +1,7 @@
 class Solution(object):
-    def isVowels(self, x):
-        return x == 'a' or x == 'e' or x == 'i' or x == 'o' or x == 'u' or x == 'A' or x == 'E' or x == 'I' or x == 'O' or x == 'U'
-
+    def isVowels(self, c):
+        return c in ('a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U')
+        
     def reverseVowels(self, s):
         """
         :type s: str
