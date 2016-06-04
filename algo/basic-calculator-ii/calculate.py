@@ -40,16 +40,12 @@ class Solution(object):
                 elif b == None:
                     b = num
                 else:
-                    if opr2 in ('+', '-'):
+                    if opr1 in ('+', '-') and opr2 in ('*' , '/'):
+                        b = self.doCalc(b, num, opr2)
+                        opr2 = None
+                    else:
                         a, b = self.doCalc(a, b, opr1), num
                         opr1, opr2 = opr2, None
-                    else:
-                        if opr1 in ('*', '/'):
-                            a, b = self.doCalc(a, b, opr1), num
-                            opr1, opr2 = opr2, None
-                        else:
-                            b = self.doCalc(b, num, opr2)
-                            opr2 = None
             else:
                 n += 1
         return a if b == None else self.doCalc(a, b, opr1)
