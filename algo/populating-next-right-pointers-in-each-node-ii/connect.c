@@ -43,8 +43,8 @@ void connect(struct TreeLinkNode *root) {
             if (cur->left && cur->right) {
                 cur->left->next = cur->right;
             } 
-            if (cur->left || cur->right) {
-                tmp = (cur->left == NULL) ? (cur->right) : ((cur->right == NULL) ? (cur->left) : (cur->right));
+            tmp = (cur->right) ? (cur->right) : (cur->left);
+            if (tmp) {
                 tmp->next = findNext(cur->next);
             }
             cur = cur->next;
